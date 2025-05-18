@@ -507,7 +507,7 @@ export default function EnergyIntakeWizard() {
                 </div>
               ))}
             </div>
-            <p className="text-sm text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpGoal}</p>
+            <p className="text-base text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpGoal}</p>
           </div>
         );
 
@@ -556,8 +556,8 @@ export default function EnergyIntakeWizard() {
           style={{ background: PALETTE.CARD_BACKGROUND, color: PALETTE.TEXT_PRIMARY }}
         />
         {err[key as keyof ErrorState] && <p className="text-center mt-2" style={{ color: PALETTE.ERROR_COLOR }}>{err[key as keyof ErrorState]}</p>}
-        <p className="text-sm text-center mt-3" dangerouslySetInnerHTML={{ __html: help }} style={{ color: PALETTE.TEXT_SECONDARY }} />
-        <p className="text-sm text-center mt-2" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.enterHint}</p>
+        <p className="text-base text-center mt-3" dangerouslySetInnerHTML={{ __html: help }} style={{ color: PALETTE.TEXT_SECONDARY }} />
+        <p className="text-base text-center mt-2" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.enterHint}</p>
       </div>
     );
 
@@ -581,7 +581,7 @@ export default function EnergyIntakeWizard() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpProtein}</p>
+          <p className="text-base text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpProtein}</p>
         </div>
       );
 
@@ -608,7 +608,7 @@ export default function EnergyIntakeWizard() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpTrainStatus}</p>
+          <p className="text-base text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpTrainStatus}</p>
         </div>
       );
 
@@ -772,7 +772,12 @@ export default function EnergyIntakeWizard() {
           style={{ background: PALETTE.CARD_BACKGROUND, border: `1px solid ${PALETTE.BORDER_COLOR}`, color: PALETTE.TEXT_SECONDARY }}>
           <Home size={18} /> {/* Removed sm prop */}
         </a>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight" style={{ color: PALETTE.ACCENT }}>{TR.estimatorTitle}</h1>
+        <h1 
+  className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight px-10 sm:px-0" // Added px-10 for mobile, sm:px-0 to reset on larger screens
+  style={{ color: PALETTE.ACCENT }}
+>
+  {TR.estimatorTitle}
+</h1>
         <div className="absolute top-0 right-0 -mt-1 sm:-mt-2 h-full flex items-start group">
           <span className="cursor-help rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-sm font-bold" style={{ background: PALETTE.CARD_BACKGROUND, color: PALETTE.TEXT_SECONDARY, border: `1px solid ${PALETTE.BORDER_COLOR}` }}>
             <Info size={18} /> {/* Removed sm prop */}
