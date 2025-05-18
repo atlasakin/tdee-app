@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.6fd36f8a.css",
-    "main.js": "./static/js/main.ba7086fb.js",
-    "static/js/453.d549306b.chunk.js": "./static/js/453.d549306b.chunk.js",
-    "index.html": "./index.html",
-    "main.6fd36f8a.css.map": "./static/css/main.6fd36f8a.css.map",
-    "main.ba7086fb.js.map": "./static/js/main.ba7086fb.js.map",
-    "453.d549306b.chunk.js.map": "./static/js/453.d549306b.chunk.js.map"
+    "main.css": "/tdee-app/static/css/main.6fd36f8a.css",
+    "main.js": "/tdee-app/static/js/main.67443052.js",
+    "static/js/453.d549306b.chunk.js": "/tdee-app/static/js/453.d549306b.chunk.js",
+    "index.html": "/tdee-app/index.html",
+    "main.6fd36f8a.css.map": "/tdee-app/static/css/main.6fd36f8a.css.map",
+    "main.67443052.js.map": "/tdee-app/static/js/main.67443052.js.map",
+    "453.d549306b.chunk.js.map": "/tdee-app/static/js/453.d549306b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6fd36f8a.css",
-    "static/js/main.ba7086fb.js"
+    "static/js/main.67443052.js"
   ]
 }
