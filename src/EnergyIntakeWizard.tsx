@@ -485,52 +485,59 @@ export default function EnergyIntakeWizard() {
         </div>
       );
 
-    if (step === 1)
-      return (
-        <div className="py-10">
-          <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: PALETTE.ACCENT }}>{TR.goalTitle}</h2>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10 mb-6">
-            {[
-              { k: "cut" as Goal, label: TR.goalCut, icon: <ChevronDown size={48} /> },
-              { k: "bulk" as Goal, label: TR.goalBulk, icon: <ChevronUp size={48} /> },
-            ].map((o) => (
-              <div
-                key={o.k}
-                onClick={() => { setData((prev) => ({ ...prev, goal: o.k })); next(); }}
-                className={`p-8 rounded-lg border-2 cursor-pointer transition w-full sm:w-auto ${data.goal === o.k ? `border-[${PALETTE.ACCENT}] ring-2 ring-[${PALETTE.ACCENT}]` : `border-[${PALETTE.BORDER_COLOR}] hover:border-[${PALETTE.ACCENT_HOVER}]`}`}
-                style={{ background: PALETTE.CARD_BACKGROUND }}
-              >
-                <div className="flex justify-center" style={{ color: data.goal === o.k ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY }}>{o.icon}</div>
-                <p className="mt-3 text-center font-semibold" style={{ color: data.goal === o.k ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY }}>{o.label}</p>
-              </div>
-            ))}
+      if (step === 1)
+        return (
+          <div className="py-10">
+            <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: PALETTE.ACCENT }}>{TR.goalTitle}</h2>
+            {/* MODIFIED CONTAINER for the two goal cards */}
+            <div className="flex flex-col items-center sm:flex-row sm:justify-center gap-6 sm:gap-10 mb-6">
+              {[
+                { k: "cut" as Goal, label: TR.goalCut, icon: <ChevronDown size={48} /> },
+                { k: "bulk" as Goal, label: TR.goalBulk, icon: <ChevronUp size={48} /> },
+              ].map((o) => (
+                <div
+                  key={o.k}
+                  onClick={() => { setData((prev) => ({ ...prev, goal: o.k })); next(); }}
+                  // MODIFIED CARD: Set a max-width for mobile, allow auto on sm.
+                  className={`p-6 rounded-lg border-2 cursor-pointer transition w-full max-w-xs mx-auto sm:mx-0 sm:w-auto sm:max-w-none flex flex-col items-center justify-center text-center ${data.goal === o.k ? `border-[${PALETTE.ACCENT}] ring-2 ring-[${PALETTE.ACCENT}]` : `border-[${PALETTE.BORDER_COLOR}] hover:border-[${PALETTE.ACCENT_HOVER}]`}`}
+                  style={{ background: PALETTE.CARD_BACKGROUND }}
+                >
+                  <div className="flex justify-center" style={{ color: data.goal === o.k ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY }}>{o.icon}</div>
+                  <p className="mt-2 font-semibold" style={{ color: data.goal === o.k ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY }}>{o.label}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpGoal}</p>
           </div>
-          <p className="text-xs text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpGoal}</p>
-        </div>
-      );
+        );
 
-    if (step === 2)
-      return (
-        <div className="py-10">
-          <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: PALETTE.ACCENT }}>{TR.stepSex}</h2>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 mb-6">
-            {[
-              { k: "male" as Sex, label: TR.genderMale, icon: <svg width="64" height="64" viewBox="0 0 24 24" stroke={data.sex === "male" ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY} strokeWidth="1.5" fill="none"><circle cx="10" cy="14" r="5" /><path d="M19 5l-5.5 5.5" /><path d="M15 3h6v6" /></svg> },
-              { k: "female" as Sex, label: TR.genderFemale, icon: <svg width="64" height="64" viewBox="0 0 24 24" stroke={data.sex === "female" ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY} strokeWidth="1.5" fill="none"><circle cx="12" cy="8" r="5" /><line x1="12" y1="13" x2="12" y2="21" /><line x1="9" y1="18" x2="15" y2="18" /></svg> },
-            ].map((o) => (
-              <div
-                key={o.k}
-                onClick={() => { setData((prev) => ({ ...prev, sex: o.k })); next(); }}
-                className={`p-8 rounded-lg border-2 cursor-pointer transition w-full sm:w-auto ${data.sex === o.k ? `border-[${PALETTE.ACCENT}] ring-2 ring-[${PALETTE.ACCENT}]` : `border-[${PALETTE.BORDER_COLOR}] hover:border-[${PALETTE.ACCENT_HOVER}]`}`}
-                style={{ background: PALETTE.CARD_BACKGROUND }}
-              >
-                {o.icon}
-                <p className="mt-3 text-center font-semibold" style={{ color: data.sex === o.k ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY }}>{o.label}</p>
+        if (step === 2)
+          return (
+            <div className="py-10">
+              <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: PALETTE.ACCENT }}>{TR.stepSex}</h2>
+              {/* MODIFIED CONTAINER for the two gender cards */}
+              <div className="flex flex-col items-center sm:flex-row sm:justify-center gap-6 sm:gap-12 mb-6">
+                {[
+                  // Using the smaller 48px icons from previous suggestion
+                  { k: "male" as Sex, label: TR.genderMale, icon: <svg width="48" height="48" viewBox="0 0 24 24" stroke={data.sex === "male" ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY} strokeWidth="1.5" fill="none"><circle cx="10" cy="14" r="5" /><path d="M19 5l-5.5 5.5" /><path d="M15 3h6v6" /></svg> },
+                  { k: "female" as Sex, label: TR.genderFemale, icon: <svg width="48" height="48" viewBox="0 0 24 24" stroke={data.sex === "female" ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY} strokeWidth="1.5" fill="none"><circle cx="12" cy="8" r="5" /><line x1="12" y1="13" x2="12" y2="21" /><line x1="9" y1="18" x2="15" y2="18" /></svg> },
+                ].map((o) => (
+                  <div
+                    key={o.k}
+                    onClick={() => { setData((prev) => ({ ...prev, sex: o.k as Sex })); next(); }}
+                    // MODIFIED CARD: Set a max-width for mobile, allow auto on sm.
+                    className={`p-6 rounded-lg border-2 cursor-pointer transition w-full max-w-xs mx-auto sm:mx-0 sm:w-auto sm:max-w-none flex flex-col items-center justify-center text-center ${data.sex === o.k ? `border-[${PALETTE.ACCENT}] ring-2 ring-[${PALETTE.ACCENT}]` : `border-[${PALETTE.BORDER_COLOR}] hover:border-[${PALETTE.ACCENT_HOVER}]`}`}
+                    style={{ background: PALETTE.CARD_BACKGROUND }}
+                  >
+                    {o.icon}
+                    <p className="mt-2 font-semibold" style={{ color: data.sex === o.k ? PALETTE.ACCENT : PALETTE.TEXT_SECONDARY }}>
+                      {o.label}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      );
+            </div>
+          );
 
     const inputStep = (
       key: DataKeys, title: string, unit: string, min: number, max: number,
