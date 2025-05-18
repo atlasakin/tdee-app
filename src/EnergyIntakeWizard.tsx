@@ -69,14 +69,14 @@ const TR = {
   helpGoal: "Kilo vermek için 'Cut', kas hacmi artırmak için 'Bulk' seçin.",
   helpBW: "Tartıdaki çıplak vücut ağırlığınız.",
   helpBF:
-    "Yağ oranınızı bilmiyorsanız <a class='underline text-[#c2a57a]' href='https://calculator.atlasakin.com' target='_blank'>buradaki hesaplayıcıyı</a> kullanabilirsiniz.",
+    "Yağ oranınızı bilmiyorsanız <a class='underline text-[#c2a57a]' href='https://yag.atlasakin.com' target='_blank'>buradaki hesaplayıcıyı</a> kullanabilirsiniz.",
   helpSteps:
-    "Yaklaşık günlük adım sayınız. 1.1 ≈ <5K adım, 1.2 ≈ 5‑8K, 1.3 ≈ 8‑12K, 1.4 ≈ >12K PA faktörüne karşılık gelir.",
+    "Yaklaşık günlük adım sayınız. Bir tahmininiz yoksa 5000 olarak girebilirsiniz.",
   helpProtein:
-    "Protein alımınız: Çok Düşük (<1 g/kg), Düşük (≈1 g/kg), Orta (≈1.6 g/kg), Yüksek (≥2 g/kg). Daha yüksek protein daha yüksek TEF demektir.",
+    "Düzenli olarak hayvansal gıda, yumurta ve süt ürünleri tüketiyorsanız Orta'yı seçebilirsiniz. Kalorilerinizi hesaplıyorsanız,kg cinsinden vücut ağırlığnız başına 1.8 gramdan fazla protein tüketiyorsanız, Yüksek seçebilirsiniz.",
   helpMin: "Bir antrenman seansında ağırlık çalıştığınız dakika.",
   helpDays: "Haftada kaç gün ağırlık çalışıyorsunuz?",
-  helpTrainStatus: "Eğitim yaşı: Başlangıç <1 yıl, Orta Seviye 1‑3 yıl, İleri Seviye 3+ yıl.",
+  helpTrainStatus: "Kaç senedir ağırlık idmanı yapıyorsunuz? Başlangıç <1 yıl, Orta Seviye 1‑3 yıl, İleri Seviye 3+ yıl.",
 
   // Seçenekler
   goalCut: "Cut",
@@ -507,7 +507,7 @@ export default function EnergyIntakeWizard() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpGoal}</p>
+            <p className="text-sm text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpGoal}</p>
           </div>
         );
 
@@ -556,8 +556,8 @@ export default function EnergyIntakeWizard() {
           style={{ background: PALETTE.CARD_BACKGROUND, color: PALETTE.TEXT_PRIMARY }}
         />
         {err[key as keyof ErrorState] && <p className="text-center mt-2" style={{ color: PALETTE.ERROR_COLOR }}>{err[key as keyof ErrorState]}</p>}
-        <p className="text-xs text-center mt-3" dangerouslySetInnerHTML={{ __html: help }} style={{ color: PALETTE.TEXT_SECONDARY }} />
-        <p className="text-xs text-center mt-2" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.enterHint}</p>
+        <p className="text-sm text-center mt-3" dangerouslySetInnerHTML={{ __html: help }} style={{ color: PALETTE.TEXT_SECONDARY }} />
+        <p className="text-sm text-center mt-2" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.enterHint}</p>
       </div>
     );
 
@@ -581,7 +581,7 @@ export default function EnergyIntakeWizard() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpProtein}</p>
+          <p className="text-sm text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpProtein}</p>
         </div>
       );
 
@@ -608,7 +608,7 @@ export default function EnergyIntakeWizard() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpTrainStatus}</p>
+          <p className="text-sm text-center" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.helpTrainStatus}</p>
         </div>
       );
 
@@ -681,7 +681,7 @@ export default function EnergyIntakeWizard() {
               </div>
             </div>
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4" style={{ color: PALETTE.SUCCESS_COLOR }}>{TR.reportSubheadingTarget}</h3>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: PALETTE.ACCENT }}>{TR.reportSubheadingTarget}</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 {[
                   { title: TR.reportLabelAverage, v: targetAvg },
@@ -690,7 +690,7 @@ export default function EnergyIntakeWizard() {
                 ].map((item) => (
                   <div key={item.title} className="p-4 rounded-lg border text-center" style={{ background: PALETTE.CARD_BACKGROUND, borderColor: PALETTE.BORDER_COLOR }}>
                     <h4 className="text-xs mb-1 uppercase tracking-wider" style={{ color: PALETTE.TEXT_SECONDARY }}>{item.title}</h4>
-                    <p className="text-2xl font-bold" style={{ color: PALETTE.SUCCESS_COLOR }}>
+                    <p className="text-2xl font-bold" style={{ color: PALETTE.ACCENT }}>
                       {format(item.v, 0)} <span className="text-sm">kcal</span>
                     </p>
                   </div>
