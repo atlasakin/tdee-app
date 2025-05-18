@@ -739,7 +739,7 @@ export default function EnergyIntakeWizard() {
             <h3 className="text-xl font-semibold mb-4" style={{ color: PALETTE.ACCENT }}>{TR.ctaTitle}</h3>
             <p className="mb-2" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.ctaTextP1}</p>
             <p className="mb-6" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.ctaTextP2}</p>
-            <a href="https://atlasakin.com/bekleme-listesi" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-8 py-3 text-lg bg-[#c2a57a] hover:bg-[#d1b891] text-[#003153] font-bold rounded-lg shadow-md">
+            <a href="https://forms.gle/eQxaeiMxo6PUNzQR9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-8 py-3 text-lg bg-[#c2a57a] hover:bg-[#d1b891] text-[#003153] font-bold rounded-lg shadow-md">
               <Mail className="mr-2 h-5 w-5" /> {TR.ctaButton}
             </a>
           </section>
