@@ -1,6 +1,6 @@
 {
   "name": "tdee-app",
-  "homepage": "https://atlasakin.github.io/tdee-app",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
