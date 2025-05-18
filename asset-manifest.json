@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tdee-app/static/css/main.6fd36f8a.css",
+    "main.js": "/tdee-app/static/js/main.afbe37bc.js",
+    "static/js/453.d549306b.chunk.js": "/tdee-app/static/js/453.d549306b.chunk.js",
+    "index.html": "/tdee-app/index.html",
+    "main.6fd36f8a.css.map": "/tdee-app/static/css/main.6fd36f8a.css.map",
+    "main.afbe37bc.js.map": "/tdee-app/static/js/main.afbe37bc.js.map",
+    "453.d549306b.chunk.js.map": "/tdee-app/static/js/453.d549306b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6fd36f8a.css",
+    "static/js/main.afbe37bc.js"
+  ]
+}
