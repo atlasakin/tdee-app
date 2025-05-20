@@ -701,47 +701,7 @@ export default function EnergyIntakeWizard() {
               {guidanceText}
             </p>
           </section>
-          {pieData.length > 0 && (
-          <section className="my-10 py-8 rounded-xl border" style={{ background: PALETTE.CARD_BACKGROUND, borderColor: PALETTE.BORDER_COLOR }}>
-            <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: PALETTE.ACCENT }}>
-              {TR.resultsComparisonTitle}
-            </h2>
-            <div style={{ width: "100%", height: 380 }} className="max-w-md mx-auto">
-              <ResponsiveContainer>
-                <PieChart>
-                  <Pie
-                    dataKey="value"
-                    data={pieData}
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={110}
-                    innerRadius={50}
-                    fill={PALETTE.ACCENT}
-                    labelLine={false}
-                    label={(props: PieLabelRenderProps) => {
-                      const { name, value } = props;
-                      const displayPercent = totalEnergyForPie > 0 && value > 0 ? (value / totalEnergyForPie * 100) : 0;
-                      return `${name}: ${displayPercent.toFixed(0)}%`;
-                    }}
-                  >
-                    {PALETTE.CHART_COLORS.slice(0, pieData.length).map((color, index) => (
-                      <Cell key={`cell-${index}`} fill={color} stroke={PALETTE.CARD_BACKGROUND} strokeWidth={2} />
-                    ))}
-                  </Pie>
-                  <Tooltip
-                    formatter={(value: ValueType, name: NameType, item: Payload<ValueType, NameType>) => { // item is Payload
-                      const percentage = totalEnergyForPie > 0 && typeof value === 'number' ? (value / totalEnergyForPie * 100) : 0;
-                      return [`${format(value as number, 0)} kcal (${percentage.toFixed(0)}%)`, name] as [ReactNode, NameType];
-                    }}
-                    contentStyle={{ backgroundColor: PALETTE.CARD_BACKGROUND, borderColor: PALETTE.BORDER_COLOR, borderRadius: '0.5rem' }}
-                    itemStyle={{ color: PALETTE.TEXT_PRIMARY }}
-                    cursor={{ fill: 'transparent' }}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-          </section>
-          )}
+          
           <section className="mb-12 text-center p-8 rounded-lg border" style={{ borderColor: PALETTE.ACCENT, background: PALETTE.CARD_BACKGROUND }}>
             <h3 className="text-xl font-semibold mb-4" style={{ color: PALETTE.ACCENT }}>{TR.ctaTitle}</h3>
             <p className="mb-2" style={{ color: PALETTE.TEXT_SECONDARY }}>{TR.ctaTextP1}</p>
