@@ -46,8 +46,8 @@ const TR = {
   ctaTextP1:
     "Vücut yağ oranı ve enerji ihtiyacınızı bilmek önemlidir; asıl farkı yaratan bu veriyi bilimsel bir strateji ve disiplinli bir sistemle eyleme dönüştürmektir.",
   ctaTextP2:
-    "Şu anda, sizin gibi hedeflerine ulaşmak isteyenler için, sonuç odaklı online koçluk programları ve sistemleri geliştiriyorum. İlk başlayanlardan olmak, lansmana özel avantajlardan yararlanmak ve sistem hazır olduğunda haberdar olmak için bekleme listesine katılın.",
-  ctaButton: "BEKLEME LİSTESİNE KATIL",
+    "Şu anda, sizin gibi hedeflerine ulaşmak isteyenler için, sonuç odaklı online fitness danışmanlığı yapıyorum. Ayrıntılar için tanışma formunu doldurabilirsiniz!",
+  ctaButton: "GELİN TANIŞALIM",
   disclaimer:
     "Uyarı: Bunlar model tabanlı tahminlerdir. Gerçek harcama ±%20 değişebilir. İlerlemenizi takip ederek değeri ayarlayın.",
   noChartData: "Grafik için veri yok.",
